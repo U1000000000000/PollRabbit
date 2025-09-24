@@ -240,6 +240,10 @@ app.get("/saved", async function(req, res) {
   }
 });
 
+app.get("/health",async function(req, res) {
+  res.send("I am awake!");
+})
+
 app.get("/", async function(req, res) {
   try {
     const polls = await Poll.find({ options: { $ne: null } })
@@ -726,3 +730,4 @@ app.post("/login", function(req, res) {
 app.listen(3000, function() {
   console.log("server is running on port 3000");
 });
+
