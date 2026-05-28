@@ -727,7 +727,7 @@ app.post("/login", function(req, res) {
   }
 });
 
-app.listen(3000, function() {
-  console.log("server is running on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function() {
+  console.log("server is running on port " + PORT);
 });
-
